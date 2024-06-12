@@ -1,0 +1,327 @@
+:root {
+  --primary: #e8751a;
+  --background: #fffadd;
+  --button: #fda403;
+  --secondary: #ffd589;
+  --reserve: #ffd990;
+  --footer: #1e1e1e;
+  --menu: #ffdfa6;
+  --employee: #ed7618;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: var(--background);
+  /* min-height: 9000px; */
+}
+
+/* NAVBAR */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+header .login-as {
+  flex: 1;
+  color: #fff;
+}
+
+header .login-as h4 {
+  font-size: 20px;
+  font-weight: 500;
+  word-spacing: 4px;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end; /* Aligns items to the right */
+  align-items: center;
+  flex: 1; /* Takes up as much space as possible on the right */
+}
+
+.navbar-ul {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.navbar-ul li {
+  list-style: none;
+}
+
+.navbar-ul li a {
+  transition: all 0.3s ease;
+  color: #fff;
+  font-weight: 400;
+}
+
+.navbar-ul li a:hover {
+  color: var(--button);
+}
+
+.employee-logout i {
+  margin-left: 10px;
+}
+
+/* ADMIN HOME */
+
+.admin-home {
+  padding: 7rem 9rem 3rem 6rem;
+  color: var(--employee);
+}
+
+.today-sale {
+  display: flex;
+  gap: 15px;
+}
+
+.today-sale h1 {
+  font-size: 26px;
+}
+
+.admin-home .title h4 {
+  font-size: 24px;
+  margin-top: 3rem;
+}
+
+/* TABLE */
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: var(--primary);
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+  border: 1px solid var(--primary);
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+  text-align: center;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: var(--menu);
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid var(--primary);
+}
+
+/* VIEW SALES BUTTON */
+.view-sales-button {
+  display: flex;
+}
+
+.sales-button {
+  margin-top: 1rem;
+}
+
+.sales-button button {
+  background-color: var(--button);
+  color: var(--background);
+  padding: 10px 15px;
+  margin-right: 2rem;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+}
+
+.sales-button:hover button {
+  background-color: var(--primary);
+}
+
+/* MENU SALES VIEW */
+
+.menu-sales {
+  padding: 7rem 9rem 3rem 6rem;
+  color: var(--employee);
+}
+
+.select-range h1 {
+  font-size: 28px;
+  margin-bottom: 2rem;
+}
+
+.range-date .title h3 {
+  font-size: 20px;
+  margin-top: 1rem;
+}
+
+.range-date input {
+  width: 18%;
+  background-color: var(--reserve);
+  border-radius: 4px;
+  padding: 7px;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.menu-sales .title h4 {
+  font-size: 24px;
+  margin-top: 3rem;
+}
+
+/* VIEW SALES IN RANGE BUTTON */
+
+.range-button {
+  margin-top: 2rem;
+}
+
+.range-button button {
+  background-color: var(--primary);
+  color: var(--background);
+  padding: 10px 10px;
+  margin-right: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+}
+
+.range-button:hover button {
+  background-color: var(--button);
+}
+
+/* WALKIN ORDER CONFIRMATION */
+.confirmation-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.confirmation-info {
+  margin-top: 1rem;
+}
+
+.confirmation-info h3 {
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: 4px;
+}
+
+.confirmation-info h4 {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.cart-price {
+  display: flex;
+}
+
+.cart-price h1 {
+  font-size: 28px;
+  margin-bottom: 2rem;
+  margin-right: 7px;
+}
+
+.payment-method .title h3 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.payment-method input {
+  width: 18%;
+  background-color: var(--reserve);
+  border-radius: 4px;
+  padding: 7px;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.back-button,
+.confirm-button {
+  margin-top: 1rem;
+}
+
+.back-button button {
+  background-color: #dddddd;
+  color: var(--primary);
+  padding: 10px 18px;
+  margin-right: 1rem;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+}
+
+.confirm-button button {
+  background-color: var(--button);
+  color: var(--background);
+  padding: 10px 18px;
+  margin-right: 1rem;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+}
+
+.confirm-button:hover button {
+  background-color: var(--primary);
+}
+
+.back-button:hover button {
+  background-color: var(--primary);
+  color: #dddddd;
+}
+
+/* WALKIN ORDER */
+
+.placecart-button {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.placecart-button button {
+  background-color: var(--button);
+  color: var(--background);
+  padding: 10px 15px;
+  margin-right: 2rem;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+}
+
+.placecart-button:hover button {
+  background-color: var(--primary);
+}
