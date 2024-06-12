@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReservEat</title>
+
+    <!-- FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ICONS FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles/style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR START -->
+    <header>
+      <img src="../../styles/img/hbeng.png" alt="" />
+
+      <div class="navbar-nav">
+        <ul class="navbar-ul">
+          <li><a href="/landing">Home</a></li>
+          <li><a href="/menu">Menu</a></li>
+          <li><a href="/ongoing">Ongoing</a></li>
+          <li><a href="/history">History</a></li>
+          <li>
+            <a href="/reservation" class="rsv">
+              <button>Reservation</button></a
+            >
+          </li>
+          <li>
+            <a href="/profile" class="nav-profile">
+              <i class="fa-regular fa-user"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <a href="#ham-menu" class="nav-hamburgermenu" id="hamburger-menu">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+    </header>
+    <!-- NAVBAR END -->
+
+    <section class="reservation-message">
+      <div class="thanks">
+        <h3>Thank you for your reservation.</h3>
+        <h4>Here are the details of your reservation:</h4>
+      </div>
+
+      <div class="detail-box">
+        <div class="detail-row">
+          <p><strong>Name:</strong><span class="details">{{.name}}</span></p>
+        </div>
+        <div class="detail-row">
+          <p><strong>Telp:</strong><span class="details">{{.phoneNum}}</span></p>
+        </div>
+        <div class="detail-row">
+          <p>
+            <strong>Date:</strong
+            ><span class="details">{{.date}}</span>
+          </p>
+        </div>
+        <div class="detail-row">
+          <p>
+            <strong>Time:</strong><span class="details">{{.time}}</span>
+          </p>
+        </div>
+        <div class="detail-row">
+          <p><strong>Guest:</strong><span class="details">{{.people}} people</span></p>
+        </div>
+        <div class="detail-row">
+          <p><strong>Table:</strong><span class="details">{{.table}}</span></p>
+        </div>
+        <div class="detail-row">
+          <p><strong>Pre-order:</strong><span class="details">Yes</span></p>
+        </div>
+      </div>
+
+      <div class="your-order">
+        <h3>Your order:</h3>
+      </div>
+
+      <!-- LIST ORDER -->
+      <div class="list-order">
+        <table>
+          {{range .cartData}}
+
+        <!-- Item 1 -->
+        <div class="individual-item">
+          <div class="counter">{{.Counter}}</div>
+          <div class="menuName">{{.MenuName}}</div>
+          <div class="amount-and-price">
+            <div class="amount">{{.Amount}}</div>
+            <div class="times"><i class="fa-solid fa-xmark"></i></div>
+            <div class="singlePrice">Rp{{.SinglePrice}}</div>
+          </div>
+          <div class="line1"></div>
+          <div class="line-2">
+            <div class="totalPrice">Rp{{.TotalPrice}}</div>
+          </div>
+        </div>
+        {{end}}
+      </div>
+    </table>
+      <!-- BUTTON -->
+      <div class="button-rsv">
+        <div class="submit-rsv rsv-reserve" onclick="location.href='/reservation/seat/menu'">
+          <button>Back</button>
+        </div>
+
+        <div class="submit-rsv rsv-preorder" onclick="location.href='/payment'">
+          <button>Next</button>
+        </div>
+      </div>
+      <!-- BUTTON END -->
+    </section>
+
+    <!-- FOOTER START -->
+    <footer>
+      <div class="footer-container">
+        <div class="coto-hbeng">
+          <h1>Coto HB'Eng</h1>
+          <p>
+            Coto HB'Eng adalah restoran yang menyajikan kelezatan autentik
+            masakan khas Sulawesi Selatan, seperti Coto Makassar dan Konro.
+            Selain itu, Coto HB'Eng juga menyediakan berbagai hidangan sajian
+            laut segar seperti kuliner Dada Tuna yang hanya dapat ditemukan di
+            Kota Sorong. Nikmati cita rasa otentik Sulawesi Selatan dan segarnya
+            seafood hanya di Coto HB'Eng.
+          </p>
+        </div>
+
+        <div class="open-hours">
+          <h1>Open Hours</h1>
+
+          <div class="schedule">
+            <div class="day">
+              <h2>Monday</h2>
+              <h2>Tuesday</h2>
+              <h2>Wednesday</h2>
+              <h2>Thursday</h2>
+              <h2>Friday</h2>
+              <h2>Saturday</h2>
+              <h2>Sunday</h2>
+            </div>
+
+            <div class="hours">
+              <h2>06.00 AM - 10.00 PM</h2>
+              <h2>06.00 AM - 10.00 PM</h2>
+              <h2>06.00 AM - 10.00 PM</h2>
+              <h2>06.00 AM - 10.00 PM</h2>
+              <h2>06.00 AM - 10.00 PM</h2>
+              <h2>06.00 AM - 10.00 PM</h2>
+              <h2>06.00 AM - 10.00 PM</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact">
+          <h1>Contact</h1>
+          <div class="icon">
+            <i class="fa-solid fa-location-dot"></i>
+            <h2>Jl. Masjid Raya, Kota Sorong</h2>
+          </div>
+          <div class="icon">
+            <i class="fa-solid fa-phone"></i>
+            <h2>+62 821-2231-4089</h2>
+          </div>
+          <div class="icon">
+            <i class="fa-regular fa-envelope"></i>
+            <h2>cotohbengowner@gmail.com</h2>
+          </div>
+          <div class="icon">
+            <i class="fa-brands fa-facebook-f"></i>
+            <h2>Coto HBM</h2>
+          </div>
+          <div class="icon">
+            <i class="fa-brands fa-instagram"></i>
+            <h2>@coto_hbeng</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="rights">
+        <h3>© 2024 Coto HB'Eng - All rights reserved.</h3>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+
+    <script src="../../styles/script.js"></script>
+  </body>
+</html>

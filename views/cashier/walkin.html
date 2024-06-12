@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReservEat</title>
+
+    <!-- FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ICONS FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles/employee-style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR START -->
+    <header>
+      <div class="login-as">
+        <h4>Walk-in Order</h4>
+      </div>
+
+      <div class="navbar-nav">
+        <ul class="navbar-ul">
+          <li class="employee-logout">
+            <a href="/logout">
+              Logout
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- NAVBAR END -->
+
+    <section class="menu-sales">
+      <!-- INPUT RANGE -->
+      <form action="/walkinorder" method="POST">
+        <input type="hidden" name="action" value="addcart">
+
+      <div class="range-date">
+        <div class="title">
+          <h3>Menu ID</h3>
+        </div>
+        <input type="text" name="menuid" id="text" autocomplete="off"/>
+      </div>
+
+      <div class="range-date">
+        <div class="title">
+          <h3>Amount</h3>
+        </div>
+        <input type="number" name="amount" id="number" />
+      </div>
+      <!-- PLACE CART BUTTON -->
+      <div class="placecart-button">
+        <button type="submit">
+          Place in cart
+        </button>
+      </div>
+      </form>
+
+      <div class="walkin-sales">
+        <!-- TABLE START -->
+        <table class="content-table">
+          <thead>
+            <!-- JUDUL KOLOM / TABLE HEAD -->
+            <tr>
+              <th>Number</th>
+              <th>Menu</th>
+              <th>Price</th>
+              <th>Amount</th>
+              <th>Total Price</th>
+              <th>Decrease</th>
+              <th>Increase</th>
+            </tr>
+          </thead>
+
+          <!-- ISI TABEL START-->
+          <tbody>
+           {{range .data}}
+
+            <tr>
+              <td>{{.Counter}}</td>
+              <td>{{.MenuName}}</td>
+              <td>{{.SinglePrice}}</td>
+              <td>{{.Amount}}</td>
+              <td>{{.TotalPrice}}</td>
+              
+              <td class="decrease">
+                <form action="/walkinorder" method="POST">
+                  <input type="hidden" name="menuindex" value="{{ .Counter}}">
+                  <input type="hidden" name="action" value="decrease">
+                  <button type="submit"><i class="fa-solid fa-minus"></i></button>
+                </form>
+              </td>
+              
+              <td class="increase">
+                <form action="/walkinorder" method="POST">
+                  <input type="hidden" name="menuindex" value="{{ .Counter}}">
+                  <input type="hidden" name="action" value="increase">
+                  <button type="submit"><i class="fa-solid fa-plus"></i></button>
+                </form>
+              </td>
+            </tr>
+            {{end}}
+          </tbody>
+          <!-- ISI TABEL END -->
+        </table>
+      </div>
+      <!-- TABLE END -->
+
+      
+
+      <!-- TOTAL PRICE -->
+      <div class="cart-price">
+        <h1>Total cart price:</h1>
+        <h1>{{.cartTotal}}</h1>
+      </div>
+
+      <!-- SEAT ID -->
+      <form action="/walkinorder" method="POST">
+
+      <div class="payment-method">
+        <div class="title">
+          <h3>Seat ID:</h3>
+        </div>
+        <input type="text" name="seat" id="text" />
+      </div>
+
+      <!-- CONFIRM AND BACK BUTTON START -->
+      <div class="view-sales-button">
+        <input type="hidden" name="action" value="confirm">
+        <div class="confirm-button">
+          <button type="submit">Next</button>
+        </div>
+       </form>
+      </div>
+      <!-- CONFIRM AND BACK BUTTON END -->
+    </section>
+
+    <script src="../../styles/script.js"></script>
+  </body>
+</html>

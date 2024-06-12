@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReservEat</title>
+
+    <!-- FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ICONS FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles/login.css" />
+  </head>
+
+  <body>
+    <form action="/registeremployee" method="POST">
+
+    <div class="login-wrapper">
+      <div class="login-box">
+        <div class="login-header">
+          <span>Sign up</span>
+        </div>
+        {{ if .message }}
+              <div class="alert alert-success">
+                  {{ .message }}
+              </div>
+              <hr/>
+          {{ end }}
+
+        <div class="input_box">
+          <input type="text" name="name"  value="{{ .userName }}" id="user" class="input-field" required autocomplete="off" />
+          <label for="user" class="label">Name</label>
+          <i class="fa-regular fa-user"></i>
+        </div>
+        
+        <div class="invalid-feedback">
+          {{ .positionError }}
+      </div>
+        <div class="input_box">
+          <input type="text" name="position" value="{{ .position }}" id="user" class="input-field" required autocomplete="off"/>
+          <label for="user" class="label">Position</label>
+          <i class="fa-solid fa-briefcase"></i>
+        </div>
+        
+
+      <div class="invalid-feedback">
+        {{ .phonenumError }}
+        {{ .unavailableError}}
+    </div>
+        <div class="input_box">
+          <input type="text" name="phonenum" value="{{ .userPhonenum }}" id="user" class="input-field" required />
+          <label for="user" class="label">Telephone</label>
+          <i class="fa-solid fa-phone"></i>
+        </div>
+        
+      <div class="invalid-feedback">
+        {{ .passError }}
+    </div>
+        <div class="input_box">
+          <input type="password" name="pass" id="pass" class="input-field" required />
+          <label for="pass" class="label">Password</label>
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        
+        <div class="input_box">
+          <input type="password" name="cpass" id="pass" class="input-field" required />
+          <label for="pass" class="label">Confirm Password</label>
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <div class="invalid-feedback">
+          {{ .cpassError }}
+      </div>
+
+        <div class="input_box">
+          <input type="submit" class="input-submit" value="Register" />
+        </div>
+        <div class="register">
+          <span><a href="/adminhome">Back</a></span>
+        </div>
+      </div>
+    </div>
+  </form>
+
+    <script src="../../styles/script.js"></script>
+  </body>
+</html>

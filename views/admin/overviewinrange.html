@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReservEat</title>
+
+    <!-- FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ICONS FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles/employee-style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR START -->
+    <header>
+      <div class="login-as">
+        <h4>View Sales in Date Range</h4>
+      </div>
+
+      <div class="navbar-nav">
+        <ul class="navbar-ul">
+          <li class="employee-logout">
+            <a href="/logout">
+              Logout
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- NAVBAR END -->
+    <form action="/overviewinrange" method="POST">
+
+    <section class="menu-sales">
+      <div class="select-range">
+        <h1>Range:</h1>
+      </div>
+
+      <!-- INPUT RANGE -->
+      <div class="range-date">
+        <div class="title">
+          <h3>Start date</h3>
+        </div>
+        <input type="date" name="start" id="date" value="{{.startDate}}"/>
+      </div>
+
+      <div class="range-date">
+        <div class="title">
+          <h3>End date</h3>
+        </div>
+        <input type="date" name="end" id="date" value="{{.endDate}}"/>
+      </div>
+
+      <div class="range-button">
+        <button type="submit">View in Range</button>
+      </div>
+    </form>
+
+      <!-- WALKIN SALES START -->
+      <div class="walkin-sales">
+        <div class="title">
+          <h4>Walk-in Sales</h4>
+        </div>
+
+        <!-- TABLE START -->
+        <table class="content-table">
+          <thead>
+            <!-- JUDUL KOLOM / TABLE HEAD -->
+            <tr>
+              <th>Walkin Order ID</th>
+              <th>Waiter ID</th>
+              <th>Cashier ID</th>
+              <th>Transaction Date</th>
+              <th>Transaction Time</th>
+              <th>Payment Method</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+
+          <!-- ISI TABEL START-->
+          <tbody>
+            {{range .walkinOverview}}
+            <tr>
+              <td>{{.WalkinId}}</td>
+              <td>{{.WaiterId}}</td>
+              <td>{{.CashierId}}</td>
+
+              <td>{{.TransactionDate}}</td>
+               <td>{{.TransactionTime}}</td>
+               <td>{{.PaymentMethod}}</td>
+               <td>{{.TotalPrice}}</td>
+
+            </tr>
+            {{end}}
+
+          </tbody>
+          <!-- ISI TABEL END -->
+        </table>
+        <!-- TABLE END -->
+      </div>
+      <!-- WALKIN SALES END -->
+
+      <!-- RESERVATION SALES START -->
+      <div class="reservation-sales">
+        <div class="title">
+          <h4>Reservation Sales</h4>
+        </div>
+
+        <!-- TABLE START -->
+        <table class="content-table">
+          <thead>
+            <!-- JUDUL KOLOM / TABLE HEAD -->
+            <tr>
+              <th>Reservation ID</th>
+              <th>Transaction Date</th>
+              <th>Transaction Time</th>
+              <th>Payment Method</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+
+          <!-- ISI TABEL START-->
+          <tbody>
+            {{range .reservedOverview}}
+
+            <tr>
+              <td>{{.ReservedId}}</td>
+
+               <td>{{.TransactionDate}}</td>
+                <td>{{.TransactionTime}}</td>
+                <td>{{.PaymentMethod}}</td>
+                <td>{{.TotalPrice}}</td>
+
+            </tr>
+            {{end}}
+
+          </tbody>
+          <!-- ISI TABEL END -->
+        </table>
+        <!-- TABLE END -->
+      </div>
+      <!-- WALKIN SALES END -->
+
+      <!-- VIEW SALES START -->
+      <div class="view-sales-button">
+        <div class="sales-button">
+          <button type="button" onclick="location.href='/adminhome'">
+            Back
+          </button>
+        </div>
+      </div>
+      <!-- VIEW SALES END -->
+    </section>
+
+    <script src="../../styles/script.js"></script>
+  </body>
+</html>

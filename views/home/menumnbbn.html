@@ -1,0 +1,878 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReservEat</title>
+
+    <!-- FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ICONS FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles/style.css" />
+  </head>
+  <body>
+    <!-- NAVBAR START -->
+    <header>
+      <img src="../../styles/img/hbeng.png" alt="" />
+
+      <div class="navbar-nav">
+        <ul class="navbar-ul">
+          <li><a href="/home">Home</a></li>
+          <li><a href="/menu">Menu</a></li>
+          <li><a href="/ongoing">Ongoing</a></li>
+          <li><a href="/history">History</a></li>
+          <li>
+            <a href="/reservation" class="rsv">
+              <button>Reservation</button></a
+            >
+          </li>
+          <li>
+            <a href="/profile" class="nav-profile">
+              <i class="fa-regular fa-user"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <a href="#ham-menu" class="nav-hamburgermenu" id="hamburger-menu">
+        <i class="fa-solid fa-bars"></i>
+      </a>
+    </header>
+    <!-- NAVBAR END -->
+     
+    <!-- MENU START -->
+    <section class="menu-container">
+      <div class="title">
+        <h2>Menu</h2>
+      </div>
+      <!-- TAB START-->
+      <div class="history-tabs menu-tabs">
+        <button class="tab-button active" data-tab="all">All</button>
+        <button class="tab-button" data-tab="speciality">Speciality</button>
+        <button class="tab-button" data-tab="seafood">Seafood</button>
+        <button class="tab-button" data-tab="chicken">Chicken</button>
+        <button class="tab-button" data-tab="additional">Additional</button>
+        <button class="tab-button" data-tab="beverages">Beverages</button>
+      </div>
+      <!-- TAB END -->
+
+      <!-- LIST MENU START -->
+
+      <!-- ALL MENU -->
+       <form action="/menu" method="POST">
+
+      <div class="card-list active" id="all">
+        <div class="card-menu">
+          <img src="../../styles/menu/1-coto.jpeg" alt="" />
+          <h4 class="card-title">Coto Makassar</h4>
+
+          <div class="card-price">
+            <div class="price">Rp34.000</div>
+            <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+            <input type="hidden" name="menuId" value="1">
+           </div>
+         </div>
+
+
+        <div class="card-menu">
+          <img src="../../styles/menu/2-konrobakar.jpg" alt="" />
+          <h4 class="card-title">Konro Bakar</h4>
+
+          <div class="card-price">
+            <div class="price">Rp66.000</div>
+            <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+            <input type="hidden" name="menuId" value="1">
+           </div>
+         </div>
+
+        <div class="card-menu">
+          <img src="../../styles/menu/3-sopkonro.jpeg" alt="" />
+          <h4 class="card-title">Sop Konro</h4>
+
+          <div class="card-price">
+            <div class="price">Rp54.000</div>
+            <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+        <div class="card-menu">
+          <img src="../../styles/menu/4-sopkikil.jpeg" alt="" />
+          <h4 class="card-title">Sop Kikil</h4>
+
+          <div class="card-price">
+            <div class="price">Rp48.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/5-dadatuna.jpeg" alt="" />
+          <h4 class="card-title">Dada Tuna Bakar</h4>
+
+          <div class="card-price">
+            <div class="price">Rp48.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/6-rahangtuna.jpg" alt="" />
+          <h4 class="card-title">Rahang Tuna Bakar</h4>
+
+          <div class="card-price">
+            <div class="price">Rp54.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/7-ikanbakarrica.jpeg" alt="" />
+          <h4 class="card-title">Ikan Bakar Rica</h4>
+
+          <div class="card-price">
+            <div class="price">Rp54.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/8-ikanbakar.jpeg" alt="" />
+          <h4 class="card-title">Ikan Bakar</h4>
+
+          <div class="card-price">
+            <div class="price">Rp60.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/9-ikantepung.jpeg" alt="" />
+          <h4 class="card-title">Ikan Goreng Tepung</h4>
+
+          <div class="card-price">
+            <div class="price">Rp60.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/10-cumibakar.jpeg" alt="" />
+          <h4 class="card-title">Cumi Bakar</h4>
+
+          <div class="card-price">
+            <div class="price">Rp54.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/11-ayamgoreng.jpeg" alt="" />
+          <h4 class="card-title">Ayam Goreng</h4>
+
+          <div class="card-price">
+            <div class="price">Rp36.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/12-ayamgeprek.jpeg" alt="" />
+          <h4 class="card-title">Ayam Geprek</h4>
+
+          <div class="card-price">
+            <div class="price">Rp36.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/13-ayambakar.jpeg" alt="" />
+          <h4 class="card-title">Ayam Bakar</h4>
+
+          <div class="card-price">
+            <div class="price">Rp36.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/14-ketupat.png" alt="" />
+          <h4 class="card-title">Ketupat</h4>
+
+          <div class="card-price">
+            <div class="price">Rp2.500</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/15-buras.png" alt="" />
+          <h4 class="card-title">Buras</h4>
+
+          <div class="card-price">
+            <div class="price">Rp2.500</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/16-nasi.png" alt="" />
+          <h4 class="card-title">Nasi Putih</h4>
+
+          <div class="card-price">
+            <div class="price">Rp6.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/17-kacang.png" alt="" />
+          <h4 class="card-title">Kacang Goreng</h4>
+
+          <div class="card-price">
+            <div class="price">Rp6.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/18-kerupuk.png" alt="" />
+          <h4 class="card-title">Kerupuk</h4>
+
+          <div class="card-price">
+            <div class="price">Rp4.500</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/19-peyek.png" alt="" />
+          <h4 class="card-title">Peyek</h4>
+
+          <div class="card-price">
+            <div class="price">Rp8.500</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/20-esteh.png" alt="" />
+          <h4 class="card-title">Es Teh</h4>
+
+          <div class="card-price">
+            <div class="price">Rp7.500</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/21-tehpanas.jpg" alt="" />
+          <h4 class="card-title">Teh Panas</h4>
+
+          <div class="card-price">
+            <div class="price">Rp7.500</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/22-esjeruk.jpg" alt="" />
+          <h4 class="card-title">Es Jeruk</h4>
+
+          <div class="card-price">
+            <div class="price">Rp12.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/23-jerukpanas.jpg" alt="" />
+          <h4 class="card-title">Jeruk Panas</h4>
+
+          <div class="card-price">
+            <div class="price">Rp12.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/24-jusalpukat.png" alt="" />
+          <h4 class="card-title">Jus Alpukat</h4>
+
+          <div class="card-price">
+            <div class="price">Rp23.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/25-jusnaga.png" alt="" />
+          <h4 class="card-title">Jus Buah Naga</h4>
+
+          <div class="card-price">
+            <div class="price">Rp23.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/26-jussirsak.png" alt="" />
+          <h4 class="card-title">Jus Sirsak</h4>
+
+          <div class="card-price">
+            <div class="price">Rp23.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/27-jusmangga.png" alt="" />
+          <h4 class="card-title">Jus Mangga</h4>
+
+          <div class="card-price">
+            <div class="price">Rp23.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/28-jussemangka.jpg" alt="" />
+          <h4 class="card-title">Jus Semangka</h4>
+
+          <div class="card-price">
+            <div class="price">Rp23.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+      </div>
+
+      <!-- SPECIALITY -->
+      <div class="card-list" id="speciality">
+        <div class="card-menu">
+          <img src="../../styles/menu/1-coto.jpeg" alt="" />
+          <h4 class="card-title">Coto Makassar</h4>
+
+          <div class="card-price">
+            <div class="price">Rp34.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/2-konrobakar.jpg" alt="" />
+          <h4 class="card-title">Konro Bakar</h4>
+
+          <div class="card-price">
+            <div class="price">Rp66.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/3-sopkonro.jpeg" alt="" />
+          <h4 class="card-title">Sop Konro</h4>
+
+          <div class="card-price">
+            <div class="price">Rp54.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/4-sopkikil.jpeg" alt="" />
+          <h4 class="card-title">Sop Kikil</h4>
+
+          <div class="card-price">
+            <div class="price">Rp48.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+      </div>
+
+      <!-- SEAFOOD -->
+      <div class="card-list" id="seafood">
+        <div class="card-menu">
+          <img src="../../styles/menu/5-dadatuna.jpeg" alt="" />
+          <h4 class="card-title">Dada Tuna Bakar</h4>
+
+          <div class="card-price">
+            <div class="price">Rp48.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/6-rahangtuna.jpg" alt="" />
+          <h4 class="card-title">Rahang Tuna Bakar</h4>
+
+          <div class="card-price">
+            <div class="price">Rp54.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/7-ikanbakarrica.jpeg" alt="" />
+          <h4 class="card-title">Ikan Bakar Rica</h4>
+
+          <div class="card-price">
+            <div class="price">Rp54.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/8-ikanbakar.jpeg" alt="" />
+          <h4 class="card-title">Ikan Bakar</h4>
+
+          <div class="card-price">
+            <div class="price">Rp60.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/9-ikantepung.jpeg" alt="" />
+          <h4 class="card-title">Ikan Goreng Tepung</h4>
+
+          <div class="card-price">
+            <div class="price">Rp60.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/10-cumibakar.jpeg" alt="" />
+          <h4 class="card-title">Cumi Bakar</h4>
+
+          <div class="card-price">
+            <div class="price">Rp54.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+      </div>
+
+      <!-- CHICKEN -->
+      <div class="card-list" id="chicken">
+        <div class="card-menu">
+          <img src="../../styles/menu/11-ayamgoreng.jpeg" alt="" />
+          <h4 class="card-title">Ayam Goreng</h4>
+
+          <div class="card-price">
+            <div class="price">Rp36.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/12-ayamgeprek.jpeg" alt="" />
+          <h4 class="card-title">Ayam Geprek</h4>
+
+          <div class="card-price">
+            <div class="price">Rp36.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/13-ayambakar.jpeg" alt="" />
+          <h4 class="card-title">Ayam Bakar</h4>
+
+          <div class="card-price">
+            <div class="price">Rp36.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+      </div>
+
+      <!-- ADDITIONAL -->
+      <div class="card-list" id="additional">
+        <div class="card-menu">
+          <img src="../../styles/menu/14-ketupat.png" alt="" />
+          <h4 class="card-title">Ketupat</h4>
+
+          <div class="card-price">
+            <div class="price">Rp2.500</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/15-buras.png" alt="" />
+          <h4 class="card-title">Buras</h4>
+
+          <div class="card-price">
+            <div class="price">Rp2.500</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/16-nasi.png" alt="" />
+          <h4 class="card-title">Nasi Putih</h4>
+
+          <div class="card-price">
+            <div class="price">Rp6.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/17-kacang.png" alt="" />
+          <h4 class="card-title">Kacang Goreng</h4>
+
+          <div class="card-price">
+            <div class="price">Rp6.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/18-kerupuk.png" alt="" />
+          <h4 class="card-title">Kerupuk</h4>
+
+          <div class="card-price">
+            <div class="price">Rp4.500</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/19-peyek.png" alt="" />
+          <h4 class="card-title">Peyek</h4>
+
+          <div class="card-price">
+            <div class="price">Rp8.500</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+      </div>
+
+      <!-- BEVERAGES -->
+      <div class="card-list" id="beverages">
+        <div class="card-menu">
+          <img src="../../styles/menu/20-esteh.png" alt="" />
+          <h4 class="card-title">Es Teh</h4>
+
+          <div class="card-price">
+            <div class="price">Rp7.500</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/21-tehpanas.jpg" alt="" />
+          <h4 class="card-title">Teh Panas</h4>
+
+          <div class="card-price">
+            <div class="price">Rp7.500</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/22-esjeruk.jpg" alt="" />
+          <h4 class="card-title">Es Jeruk</h4>
+
+          <div class="card-price">
+            <div class="price">Rp12.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/23-jerukpanas.jpg" alt="" />
+          <h4 class="card-title">Jeruk Panas</h4>
+
+          <div class="card-price">
+            <div class="price">Rp12.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/24-jusalpukat.png" alt="" />
+          <h4 class="card-title">Jus Alpukat</h4>
+
+          <div class="card-price">
+            <div class="price">Rp23.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/25-jusnaga.png" alt="" />
+          <h4 class="card-title">Jus Buah Naga</h4>
+
+          <div class="card-price">
+            <div class="price">Rp23.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/26-jussirsak.png" alt="" />
+          <h4 class="card-title">Jus Sirsak</h4>
+
+          <div class="card-price">
+            <div class="price">Rp23.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/27-jusmangga.png" alt="" />
+          <h4 class="card-title">Jus Mangga</h4>
+
+          <div class="card-price">
+            <div class="price">Rp23.000</div>
+           <button type="submit" class="fa-solid fa-plus add-to-cart"></button>
+           <input type="hidden" name="menuId" value="1">
+          </div>
+        </div>
+       
+
+        <div class="card-menu">
+          <img src="../../styles/menu/28-jussemangka.jpg" alt="" />
+          <h4 class="card-title">Jus Semangka</h4>
+
+          <div class="card-price">
+            <div class="price">Rp23.000</div>
+            <i class="fa-solid fa-plus add-to-cart"><button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+      <!-- LIST MENU END -->
+    </section>
+    <!-- MENU END -->
+
+    <!-- CART SIDEBAR START -->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-close">
+        <i class="fa-solid fa-close"></i>
+      </div>
+      <div class="cart-menu">
+        <h3>My Cart</h3>
+        <div class="cart-items">
+          <div class="individual-cart-item">
+            <div class="counter">1</div>
+            <div class="menuName">Coto Makassar</div>
+            <div class="amount-and-price">
+              <div class="amount">2</div>
+              <div class="times"><i class="fa-solid fa-xmark"></i></div>
+              <div class="singlePrice">Rp34.000</div>
+            </div>
+            <div class="line1"></div>
+            <div class="line-2">
+              <div class="totalPrice">Rp68.000</div>
+              <div class="modified-amount">
+                <i class="fa-solid fa-minus plus-minus"></i>
+                <div class="amount">2</div>
+                <i class="fa-solid fa-plus plus-minus"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-footer">
+          <div class="total-amount">
+            <h5>Total</h5>
+            <div class="cart-total">Rp0</div>
+          </div>
+          <button class="checkout-btn">Checkout</button>
+        </div>
+      </div>
+    </div>
+    <!-- CART SIDEBAR END -->
+
+    <!-- FOOTER START -->
+    <footer>
+      <div class="footer-container">
+        <div class="coto-hbeng">
+          <h1>Coto HB'Eng</h1>
+          <p>
+            Coto HB'Eng adalah restoran yang menyajikan kelezatan autentik
+            masakan khas Sulawesi Selatan, seperti Coto Makassar dan Konro.
+            Selain itu, Coto HB'Eng juga menyediakan berbagai hidangan sajian
+            laut segar seperti kuliner Dada Tuna yang hanya dapat ditemukan di
+            Kota Sorong. Nikmati cita rasa otentik Sulawesi Selatan dan segarnya
+            seafood hanya di Coto HB'Eng.
+          </p>
+        </div>
+
+        <div class="open-hours">
+          <h1>Open Hours</h1>
+
+          <div class="schedule">
+            <div class="day">
+              <h2>Monday</h2>
+              <h2>Tuesday</h2>
+              <h2>Wednesday</h2>
+              <h2>Thursday</h2>
+              <h2>Friday</h2>
+              <h2>Saturday</h2>
+              <h2>Sunday</h2>
+            </div>
+
+            <div class="hours">
+              <h2>06.00 AM - 10.00 PM</h2>
+              <h2>06.00 AM - 10.00 PM</h2>
+              <h2>06.00 AM - 10.00 PM</h2>
+              <h2>06.00 AM - 10.00 PM</h2>
+              <h2>06.00 AM - 10.00 PM</h2>
+              <h2>06.00 AM - 10.00 PM</h2>
+              <h2>06.00 AM - 10.00 PM</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact">
+          <h1>Contact</h1>
+          <div class="icon">
+            <i class="fa-solid fa-location-dot"></i>
+            <h2>Jl. Masjid Raya, Kota Sorong</h2>
+          </div>
+          <div class="icon">
+            <i class="fa-solid fa-phone"></i>
+            <h2>+62 821-2231-4089</h2>
+          </div>
+          <div class="icon">
+            <i class="fa-regular fa-envelope"></i>
+            <h2>cotohbengowner@gmail.com</h2>
+          </div>
+          <div class="icon">
+            <i class="fa-brands fa-facebook-f"></i>
+            <h2>Coto HBM</h2>
+          </div>
+          <div class="icon">
+            <i class="fa-brands fa-instagram"></i>
+            <h2>@coto_hbeng</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="rights">
+        <h3>© 2024 Coto HB'Eng - All rights reserved.</h3>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+
+    <script src="../../styles/tabs.js"></script>
+  </body>
+</html>

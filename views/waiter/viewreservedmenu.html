@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReservEat</title>
+
+    <!-- FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ICONS FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles/employee-style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR START -->
+    <header>
+      <div class="login-as">
+        <h4>View Reserved Menus</h4>
+      </div>
+
+      <div class="navbar-nav">
+        <ul class="navbar-ul">
+          <li class="employee-logout">
+            <a href="/logout">
+              Logout
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- NAVBAR END -->
+
+    <section class="menu-sales">
+      <div class="select-range">
+        <h1>Reservation ID: {{.reservationId}}</h1>
+        <h1></h1>
+      </div>
+
+      <!-- WALKIN SALES START -->
+      <div class="walkin-sales">
+        <div class="title">
+          <h4>Confirmed orders:</h4>
+        </div>
+
+        <!-- TABLE START -->
+        <table class="content-table">
+          <thead>
+            <!-- JUDUL KOLOM / TABLE HEAD -->
+            <tr>
+              <th>Reservation ID</th>
+              <th>Menu ID</th>
+              <th>Menu Name</th>
+              <th>Amount</th>
+            </tr>
+          </thead>
+
+          <!-- ISI TABEL START-->
+          <tbody>
+            {{range .confirmedOrders}}
+            <tr>
+              <td>{{.ReservedOrderId}}</td>
+              <td>{{.MenuId}}</td>
+              <td>{{.MenuName}}</td>
+              <td>{{.Amount}}</td>
+            </tr>
+            {{end}}
+          </tbody>
+          <!-- ISI TABEL END -->
+        </table>
+      </div>
+      <!-- TABLE END -->
+
+      <!-- BACK BUTTON START -->
+      <div class="view-sales-button">
+        <div class="back-button">
+          <button type="button" onclick="location.href='/viewreservation'">Back to home</button>
+        </div>
+      </div>
+      <!-- BACK BUTTON END -->
+    </section>
+
+    <script src="../../styles/script.js"></script>
+  </body>
+</html>

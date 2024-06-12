@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReservEat</title>
+
+    <!-- FONTS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ICONS FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles/employee-style.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR START -->
+    <header>
+      <div class="login-as">
+        <h4>View Reservations</h4>
+      </div>
+
+      <div class="navbar-nav">
+        <ul class="navbar-ul">
+          <li class="employee-logout">
+            <a href="/logout">
+              Logout
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- NAVBAR END -->
+
+    <section class="menu-sales">
+      <!-- UPCOMING RESERVATIONS START -->
+      <div class="walkin-sales">
+        <div class="title">
+          <h4>Upcoming Reservations</h4>
+        </div>
+
+        <!-- TABLE START -->
+        <table class="content-table">
+          <thead>
+            <!-- JUDUL KOLOM / TABLE HEAD -->
+            <tr>
+              <th>Reservation ID</th>
+              <th>Customer Name</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Table</th>
+              <th>Notes</th>
+              <th>Status</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+
+          <!-- ISI TABEL START-->
+          <tbody>
+            {{range .upcomingData}}
+
+            <tr>
+              <td>{{.ReservationId}}</td>
+              <td>{{.CustomerName}}</td>
+              <td>{{.Date}}</td>
+              <td>{{.Time}}</td>
+              <td>{{.Seat}}</td>
+              <td>{{.Notes}}</td>
+              <td>{{.Status}}</td>
+
+              <td class="status-button">
+                <form action="/viewreservation" method="POST">
+                  <input type="hidden" name="reservationId" value="{{ .ReservationId}}">
+                  <input type="hidden" name="action" value="complete">
+                <button type="submit">Completed</button>
+                  
+                  <!-- <button type="submit" class="btn btn-primary">Reservation Completed</button> -->
+                 </form>
+              </td>
+              <td class="status-button">
+                <form action="/viewreservation" method="POST">
+                  <input type="hidden" name="reservationId" value="{{ .ReservationId}}">
+                  <input type="hidden" name="action" value="cancel">
+                  <button type="submit">Cancelled</button>
+                </form>
+              </td>
+              <td class="status-button">
+                <form action="/viewreservation" method="POST">
+                  <input type="hidden" name="reservationId" value="{{ .ReservationId}}">
+                  <input type="hidden" name="action" value="ongoing">
+                  <button type="submit">Ongoing</button>
+                </form>
+              </td>
+              <td class="status-button">
+                <form action="/viewreservedmenu" method="POST">
+                  <input type="hidden" name="reservationId" value="{{ .ReservationId}}">
+                  <input type="hidden" name="action" value="order">
+                  <button type="submit">View Orders</button>
+                </form>
+              </td>
+            </tr>
+            {{end}}
+          </tbody>
+          <!-- ISI TABEL END -->
+        </table>
+        <!-- TABLE END -->
+      </div>
+      <!-- UPCOMING END -->
+
+      <!-- ONGOING RESERVATION START -->
+      <div class="reservation-sales">
+        <div class="title">
+          <h4>Ongoing Reservation</h4>
+        </div>
+
+        <!-- TABLE START -->
+        <table class="content-table">
+          <thead>
+            <!-- JUDUL KOLOM / TABLE HEAD -->
+            <tr>
+              <th>Reservation ID</th>
+              <th>Customer Name</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Table</th>
+              <th>Notes</th>
+              <th>Status</th>
+              <th></th>
+              <th></th>
+
+            </tr>
+          </thead>
+
+          <!-- ISI TABEL START-->
+          <tbody>
+            {{range .ongoingData}}
+
+            <tr>
+              <td>{{.ReservationId}}</td>
+              <td>{{.CustomerName}}</td>
+              <td>{{.Date}}</td>
+              <td>{{.Time}}</td>
+              <td>{{.Seat}}</td>
+              <td>{{.Notes}}</td>
+              <td>{{.Status}}</td>
+              <td>
+                <form action="/viewreservation" method="POST">
+                  <input type="hidden" name="reservationId" value="{{ .ReservationId}}">
+                  <input type="hidden" name="action" value="complete">
+                  <button type="submit">Completed</button>
+                </form>
+               </td>
+               <td>
+                <form action="/viewreservedmenu" method="POST">
+                  <input type="hidden" name="reservationId" value="{{ .ReservationId}}">
+                  <input type="hidden" name="action" value="order">
+                  <button type="submit">View Orders</button>
+                 </form>
+                </td>
+            </tr>
+            {{end}}
+          </tbody>
+          <!-- ISI TABEL END -->
+        </table>
+        <!-- TABLE END -->
+      </div>
+      <!-- ONGOING END -->
+
+      <!-- COMPLETED START -->
+      <div class="reservation-sales">
+        <div class="title">
+          <h4>Completed Reservation</h4>
+        </div>
+
+        <!-- TABLE START -->
+        <table class="content-table">
+          <thead>
+            <!-- JUDUL KOLOM / TABLE HEAD -->
+            <tr>
+              <th>Reservation ID</th>
+              <th>Customer Name</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Table</th>
+              <th>Notes</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <!-- ISI TABEL START-->
+          <tbody>
+            {{range .completedData}}
+
+            <tr>
+              <td>{{.ReservationId}}</td>
+              <td>{{.CustomerName}}</td>
+              <td>{{.Date}}</td>
+              <td>{{.Time}}</td>
+              <td>{{.Seat}}</td>
+              <td>{{.Notes}}</td>
+              <td>{{.Status}}</td>
+            </tr>
+            {{end}}
+          </tbody>
+          <!-- ISI TABEL END -->
+        </table>
+        <!-- TABLE END -->
+      </div>
+      <!-- COMPLETED END -->
+
+      <!-- CANCELLED START -->
+      <div class="reservation-sales">
+        <div class="title">
+          <h4>Cancelled Reservation</h4>
+        </div>
+
+        <!-- TABLE START -->
+        <table class="content-table">
+          <thead>
+            <!-- JUDUL KOLOM / TABLE HEAD -->
+            <tr>
+              <th>Reservation ID</th>
+              <th>Customer Name</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Table</th>
+              <th>Notes</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <!-- ISI TABEL START-->
+          <tbody> 
+            {{range .cancelledData}}
+
+            <tr>
+              <td>{{.ReservationId}}</td>
+              <td>{{.CustomerName}}</td>
+              <td>{{.Date}}</td>
+              <td>{{.Time}}</td>
+              <td>{{.Seat}}</td>
+              <td>{{.Notes}}</td>
+              <td>{{.Status}}</td>
+            </tr>
+            {{end}}
+          </tbody>
+          <!-- ISI TABEL END -->
+        </table>
+        <!-- TABLE END -->
+      </div>
+      <!-- CANCELLED END -->
+    </section>
+
+    <script src="../../styles/script.js"></script>
+  </body>
+</html>
