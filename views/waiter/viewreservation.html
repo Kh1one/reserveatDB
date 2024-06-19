@@ -63,10 +63,10 @@
               <th>Table</th>
               <th>Notes</th>
               <th>Status</th>
-              <th>Completed</th>
-              <th>Cancelled</th>
-              <th>Ongoing</th>
-              <th>View Order</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
 
@@ -88,28 +88,28 @@
                 <form action="/viewreservation" method="POST">
                   <input type="hidden" name="reservationId" value="{{ .ReservationId}}">
                   <input type="hidden" name="action" value="complete">
-                  <button type="submit"><i class="fa-solid fa-check"></i></button>
+                <button type="submit">Completed</button>
                  </form>
               </td>
               <td class="decrease">
                 <form action="/viewreservation" method="POST">
                   <input type="hidden" name="reservationId" value="{{ .ReservationId}}">
                   <input type="hidden" name="action" value="cancel">
-                  <button type="submit"><i class="fa-solid fa-check"></i></button>
+                <button type="submit">Cancelled</button>
                 </form>
               </td>
               <td class="decrease">
                 <form action="/viewreservation" method="POST">
                   <input type="hidden" name="reservationId" value="{{ .ReservationId}}">
                   <input type="hidden" name="action" value="ongoing">
-                  <button type="submit"><i class="fa-solid fa-check"></i></button>
+                <button type="submit">Ongoing</button>
                 </form>
               </td>
               <td class="decrease">
                 <form action="/viewreservedmenu" method="POST">
                   <input type="hidden" name="reservationId" value="{{ .ReservationId}}">
                   <input type="hidden" name="action" value="order">
-                  <button type="submit"><i class="fa-solid fa-check"></i></button>
+                <button type="submit">View Orders</button>
                 </form>
               </td>
             </tr>
@@ -139,8 +139,8 @@
               <th>Table</th>
               <th>Notes</th>
               <th>Status</th>
-              <th>Conpleted</th>
-              <th>View Order</th>
+              <th></th>
+              <th></th>
 
             </tr>
           </thead>
@@ -161,14 +161,16 @@
                 <form action="/viewreservation" method="POST">
                   <input type="hidden" name="reservationId" value="{{ .ReservationId}}">
                   <input type="hidden" name="action" value="complete">
-                  <button type="submit"><i class="fa-solid fa-check"></i></button>
+                    <input type="hidden" name="action" value="confirm">
+                    <button type="submit">Ongoing</button>
+                  </div>
                 </form>
                </td>
                <td>
                 <form action="/viewreservedmenu" method="POST">
                   <input type="hidden" name="reservationId" value="{{ .ReservationId}}">
                   <input type="hidden" name="action" value="order">
-                  <button type="submit"><i class="fa-solid fa-check"></i></button>
+                  <button type="submit">View Orders</button>
                  </form>
                 </td>
             </tr>
